@@ -11,3 +11,27 @@ body {
 	background: rgb(253, 252, 194);
 	font-size: 5rem;
 }
+
+nav {
+	background: purple;
+
+	.navbar-list {
+		display: flex;
+		padding: 0 7rem;
+		list-style-type: none;
+
+		a {
+			padding: 0 1rem;
+			color: white;
+			text-decoration: none;
+			display: block;
+		}
+	}
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 5rem;
+}
