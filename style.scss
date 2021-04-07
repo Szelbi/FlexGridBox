@@ -2,18 +2,36 @@
 
 * {
 	padding: 0;
-	box-sizing: border-box;
 	border: 0;
 	margin: 0;
 }
 
+:root {
+	/* Base spacing unit. */
+	// --spacing-unit: 6px;
+
+	// /* Colors. */
+	// --primary-color: #8a35b1;
+	// --primary-color-lighter: color.scale(red, $alpha: -40%);
+	// --primary-color-text: #fff;
+	--bg-color: #fdfcc2;
+
+	--color: 340, 100%; /*the base color*/
+	--l: 50%; /*the initial lightness*/
+
+	--color-primary: hsl(var(--color), var(--l));
+	--color-primary-darker: hsl(var(--color), calc(var(--l) - 20%));
+	--color-primary-darkest: hsl(var(--color), calc(var(--l) - 40%));
+}
+
 body {
-	background: rgb(253, 252, 194);
+	background: var(--bg-color);
 	font-size: 5rem;
+	font-family: "Inconsolata", monospace;
 }
 
 nav {
-	background: purple;
+	background: var(--color-primary);
 
 	.navbar-list {
 		display: flex;
@@ -21,10 +39,14 @@ nav {
 		list-style-type: none;
 
 		a {
-			padding: 0 1rem;
-			color: white;
+			padding: 0 2rem;
+			margin: 0 1rem;
+			color: var(--primary-color-text);
 			text-decoration: none;
 			display: block;
+			&:hover {
+				box-shadow: inset 0 0 3rem 0 white, 0 0 3rem 0 white;
+			}
 		}
 	}
 }
@@ -34,4 +56,17 @@ main {
 	justify-content: center;
 	align-items: center;
 	padding-top: 5rem;
+}
+
+// $color: purple;
+
+// :root {
+// 	--color: purple;
+// }
+
+.box {
+	width: 100vw;
+	font-size: 4rem;
+	background-color: var(--color-primary-darker);
+	// background-color: scale-color(var(--color), $lightness: 50%);
 }
