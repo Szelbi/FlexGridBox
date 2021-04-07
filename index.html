@@ -18,15 +18,17 @@
 <body>
 
     <nav>
-        <ul class="navbar-list">
-            <li class="navbar-list-item"><a href="#">Margin</a></li>
-            <li class="navbar-list-item"><a href="#">Flexbox</a></li>
-            <li class="navbar-list-item"><a href="#">Gridbox</a></li>
-            <li>
+        <div class="view-selector-container">
+            <a href="#">Margin</a>
+            <a href="#">Flexbox</a>
+            <a href="#">Gridbox</a>
+        </div>
+        <div class="property-container">
+            <div class="property-hue">
                 <label for="hue-slider">Hue</label>
                 <input id="hue-slider" name="hue-slider" type="range" min="0" max="360">
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
     <div class="box box4">--color-primary-lightest</div>
     <div class="box box3">--color-primary-lighter</div>
