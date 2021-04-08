@@ -19,9 +19,12 @@
 	--colorHSL: var(--h), var(--s), var(--l); /*the base color*/
 	--color-primary: hsl(var(--colorHS), var(--l));
 	--color-primary-lightest: hsl(var(--colorHS), calc(var(--l) + 45%));
-	--color-primary-lighter: hsl(var(--colorHS), calc(var(--l) + 20%));
+	--color-primary-lighter: hsl(var(--colorHS), calc(var(--l) + 30%));
 	--color-primary-darker: hsl(var(--colorHS), calc(var(--l) - 20%));
 	--color-primary-darkest: hsl(var(--colorHS), calc(var(--l) - 30%));
+
+	/* Grid parameters*/
+	--grid-columns: 3;
 }
 
 body {
@@ -82,9 +85,10 @@ main {
 }
 
 .container {
+	padding: 2rem;
 	display: grid;
 	// grid-template-rows: auto;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(var(--grid-columns), 1fr);
 	grid-gap: 1rem;
 	justify-items: stretch;
 }
@@ -100,10 +104,6 @@ main {
 		font-size: 2rem;
 		background-color: var(--color-primary);
 	}
-
-	// .cell-content {
-	// 	// background-color: white;
-	// }
 
 	.cell-footer {
 		background-color: var(--color-primary-lighter);
