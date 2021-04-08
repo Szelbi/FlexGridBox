@@ -1,9 +1,14 @@
 let root = document.documentElement;
-let slider = document.getElementById('hue-slider');
+let hueSlider = document.getElementById('hue-slider');
+let griColumnsSlider = document.getElementById('grid-columns-slider');
 
-console.log(slider.value);
+// console.log(slider.value);
 
 
-slider.addEventListener('input', () => {
-    root.style.setProperty('--h', slider.value);
+hueSlider.addEventListener('input', () => {
+    root.style.setProperty('--h', hueSlider.value);
+})
+
+griColumnsSlider.addEventListener('input', () => {
+    root.style.setProperty('--grid-columns', griColumnsSlider.value);
 })
