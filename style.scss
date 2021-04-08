@@ -18,7 +18,7 @@
 	--colorHS: var(--h), var(--s); /*the base color*/
 	--colorHSL: var(--h), var(--s), var(--l); /*the base color*/
 	--color-primary: hsl(var(--colorHS), var(--l));
-	--color-primary-lightest: hsl(var(--colorHS), calc(var(--l) + 40%));
+	--color-primary-lightest: hsl(var(--colorHS), calc(var(--l) + 45%));
 	--color-primary-lighter: hsl(var(--colorHS), calc(var(--l) + 20%));
 	--color-primary-darker: hsl(var(--colorHS), calc(var(--l) - 20%));
 	--color-primary-darkest: hsl(var(--colorHS), calc(var(--l) - 30%));
@@ -26,7 +26,7 @@
 
 body {
 	background: var(--color-primary-lightest);
-	font-size: 3rem;
+	font-size: 1rem;
 	font-family: "Inconsolata", monospace;
 }
 
@@ -41,6 +41,7 @@ nav {
 		a {
 			padding: 0 2rem;
 			color: var(--primary-color-text);
+			font-size: 3rem;
 			text-decoration: none;
 			// border: solid 1px black;
 			&:hover {
@@ -78,4 +79,33 @@ main {
 }
 .box4 {
 	background-color: var(--color-primary-lightest);
+}
+
+.container {
+	display: grid;
+	// grid-template-rows: auto;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+	justify-items: stretch;
+}
+
+.cell {
+	border: 1px solid black;
+
+	& > * {
+		padding: 1rem;
+	}
+
+	.cell-header {
+		font-size: 2rem;
+		background-color: var(--color-primary);
+	}
+
+	// .cell-content {
+	// 	// background-color: white;
+	// }
+
+	.cell-footer {
+		background-color: var(--color-primary-lighter);
+	}
 }
