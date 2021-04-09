@@ -27,15 +27,20 @@
 	--grid-columns: 3;
 }
 
+/* Hiding the  scrollbar. */
+html {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE 10+ */
+}
+::-webkit-scrollbar {
+	width: 0; /* WebKit */
+	background: transparent;
+}
+
 body {
 	background: var(--color-primary-lightest);
 	font-size: 1rem;
 	font-family: "Inconsolata", monospace;
-}
-
-::-webkit-scrollbar {
-	width: 0; /* Remove scrollbar space */
-	background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 nav {
