@@ -33,6 +33,11 @@ body {
 	font-family: "Inconsolata", monospace;
 }
 
+::-webkit-scrollbar {
+	width: 0; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
+}
+
 nav {
 	display: flex;
 	padding: 0 3rem;
@@ -64,12 +69,6 @@ main {
 	align-items: center;
 	padding-top: 5rem;
 }
-
-// .box {
-// 	width: 100vw;
-// 	font-size: 1rem;
-// 	// background-color: scale-color(var(--color), $lightness: 50%);
-// }
 
 .box1 {
 	background-color: var(--color-primary-darker);
