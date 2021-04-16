@@ -98,18 +98,49 @@ main {
 }
 
 .cell {
+	height: 100%;
 	border: 1px solid black;
+	display: grid;
+	grid-template-columns: minmax(50px, 150px), minmax(150px, 300px);
+	grid-template-rows: auto auto auto;
+	grid-template-areas:
+		"header header"
+		"image content"
+		"footer footer";
 
-	& > * {
-		padding: 1rem;
+	// & > * {
+	// 	padding: 1rem;
+	// }
+
+	.cell-img {
+		grid-area: image;
 	}
 
 	.cell-header {
+		grid-area: header;
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.3rem 1rem;
 		font-size: 2rem;
 		background-color: var(--color-primary);
+
+		& > .remove-btn {
+			background-color: transparent;
+
+			& > .remove-btn-icon {
+				font-size: 1.5rem;
+				color: var(--color-primary-darkest);
+			}
+		}
+	}
+
+	.cell-content {
+		grid-area: content;
 	}
 
 	.cell-footer {
+		grid-area: footer;
 		background-color: var(--color-primary-lighter);
 	}
 }
