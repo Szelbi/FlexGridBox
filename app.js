@@ -26,7 +26,6 @@ function addNewCell() {
 
     let randomText = randomTextgenerator(getRandomInt(50, 150));
 
-
     // new .cell
     let cell = document.createElement('div');
     cell.classList.add("cell");
@@ -35,12 +34,21 @@ function addNewCell() {
     // header
     let header = document.createElement('div');
     header.classList.add("cell-header");
-    header.innerHTML = `
-        <h5>Cell title..</h5>
-        <button class="remove-btn">
-        <i class="remove-btn-icon fas fa-minus-circle"></i>
-        </button>`
     cell.appendChild(header);
+
+    let headerTitle = document.createElement('h5');
+    headerTitle.innerText = 'Cell title..';
+    header.appendChild(headerTitle);
+
+    let removeBtn = document.createElement('button');
+    removeBtn.classList.add("remove-btn");
+    removeBtn.innerHTML = '<i class="remove-btn-icon fas fa-minus-circle"></i>';
+    // removeBtn.addEventListener('click', removeAllChildNodes(cell));
+    removeBtn.addEventListener('click', () => {
+        removeAllChildNodes(cell);
+        cell.remove();
+    });
+    header.appendChild(removeBtn);
 
     // image
     let image = document.createElement('div');
@@ -63,11 +71,19 @@ function addNewCell() {
     cell.appendChild(footer);
 }
 
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 function getRandomInt(min = 0, max = 100) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 
 
 
